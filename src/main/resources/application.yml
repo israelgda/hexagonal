@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: 'hexagonal'
+
+integrations:
+  clients:
+    viacep:
+      address:
+        url: 'https://viacep.com.br/ws/'
