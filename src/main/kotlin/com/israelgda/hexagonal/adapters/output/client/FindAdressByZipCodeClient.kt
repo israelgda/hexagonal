@@ -12,5 +12,5 @@ import org.springframework.web.bind.annotation.PathVariable
 interface FindAdressByZipCodeClient {
 
     @GetMapping("/{zipCode}/json/")
-    fun finde(@PathVariable zipCode: String): AddressResponse
+    fun find(@PathVariable zipCode: String): AddressResponse
 }
