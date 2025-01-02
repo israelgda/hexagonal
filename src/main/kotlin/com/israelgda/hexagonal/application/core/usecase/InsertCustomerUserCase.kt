@@ -8,9 +8,9 @@ import com.israelgda.hexagonal.application.ports.output.InsertCustomerOutputPort
 class InsertCustomerUserCase(
     private val findAdressByZipCodeOutputPort: FindAddressByZipCodeOutputPort,
     private val insertCustomerOutputPort: InsertCustomerOutputPort,
-) {
+): InsertCustomerInputPort {
 
-    fun insert(customer: Customer, zipCode: String) {
+    override fun insert(customer: Customer, zipCode: String) {
         customer.apply {
             address = findAdressByZipCodeOutputPort.find(zipCode)
         }.let {
