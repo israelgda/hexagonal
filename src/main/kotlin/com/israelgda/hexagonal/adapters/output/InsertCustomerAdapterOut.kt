@@ -7,7 +7,7 @@ import com.israelgda.hexagonal.application.ports.output.InsertCustomerOutputPort
 import org.springframework.stereotype.Component
 
 @Component
-class InsertCustomerAdapter(
+class InsertCustomerAdapterOut(
     private val customerRepository: CustomerRepository
 ): InsertCustomerOutputPort {
     override fun insert(customer: Customer) {

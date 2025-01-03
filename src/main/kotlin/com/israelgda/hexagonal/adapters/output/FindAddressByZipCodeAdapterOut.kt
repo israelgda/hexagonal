@@ -7,7 +7,7 @@ import com.israelgda.hexagonal.application.ports.output.FindAddressByZipCodeOutp
 import org.springframework.stereotype.Component
 
 @Component
-class FindAddressByZipCodeAdapter(
+class FindAddressByZipCodeAdapterOut(
     private val client: FindAdressByZipCodeClient,
 ): FindAddressByZipCodeOutputPort {
 
