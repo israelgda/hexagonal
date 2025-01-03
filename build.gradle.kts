@@ -22,6 +22,7 @@ extra["springCloudVersion"] = "2024.0.0"
 
 dependencies {
 	implementation("org.postgresql:postgresql:42.7.4")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.4.1")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
