@@ -8,7 +8,9 @@ import com.israelgda.hexagonal.application.core.domain.Customer
 fun Customer.toEntity() = CustomerEntity(
     this.id,
     this.name,
-    this.address!!.toEntity(),
+    this.street!!,
+    this.city!!,
+    this.state!!,
     this.cpf,
     this.isValidCpf,
 )
