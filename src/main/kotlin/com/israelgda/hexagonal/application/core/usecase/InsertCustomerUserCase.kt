@@ -4,7 +4,9 @@ import com.israelgda.hexagonal.application.core.domain.Customer
 import com.israelgda.hexagonal.application.ports.input.InsertCustomerInputPort
 import com.israelgda.hexagonal.application.ports.output.FindAddressByZipCodeOutputPort
 import com.israelgda.hexagonal.application.ports.output.InsertCustomerOutputPort
+import org.springframework.stereotype.Service
 
+@Service
 class InsertCustomerUserCase(
     private val findAdressByZipCodeOutputPort: FindAddressByZipCodeOutputPort,
     private val insertCustomerOutputPort: InsertCustomerOutputPort,
