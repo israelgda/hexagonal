@@ -1,6 +1,7 @@
 package com.israelgda.hexagonal.adapters.output.repository.entity
 
 import com.israelgda.hexagonal.application.core.domain.Address
+import com.israelgda.hexagonal.application.core.domain.Customer
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
