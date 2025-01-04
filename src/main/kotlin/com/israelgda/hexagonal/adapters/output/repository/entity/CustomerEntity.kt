@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull
 data class CustomerEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: String?,
+    val id: Long?,
 
     @NotNull
     val name: String,
@@ -30,4 +30,15 @@ data class CustomerEntity(
     val cpf: String,
 
     val isValidCpf: Boolean = false,
-)
+) {
+
+    constructor(): this(
+        null,
+        "",
+        "",
+        "",
+        "",
+        "",
+        false
+    )
+}
