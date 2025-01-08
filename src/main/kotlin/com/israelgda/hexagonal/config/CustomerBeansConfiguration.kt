@@ -1,10 +1,10 @@
 package com.israelgda.hexagonal.config
 
-import com.israelgda.hexagonal.adapters.output.FindAddressByZipCodeAdapterOut
-import com.israelgda.hexagonal.adapters.output.FindCustomerAdapterOut
-import com.israelgda.hexagonal.adapters.output.InsertCustomerAdapterOut
 import com.israelgda.hexagonal.application.core.usecase.FindCustomerUseCase
 import com.israelgda.hexagonal.application.core.usecase.InsertCustomerUserCase
+import com.israelgda.hexagonal.application.ports.output.FindAddressByZipCodeOutputPort
+import com.israelgda.hexagonal.application.ports.output.FindCustomerOutputPort
+import com.israelgda.hexagonal.application.ports.output.InsertCustomerOutputPort
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
@@ -13,8 +13,8 @@ class CustomerBeansConfiguration {
 
     @Bean
     fun insertCustomer(
-        findAddressByZipCodeAdapterOut: FindAddressByZipCodeAdapterOut,
-        insertCustomerAdapterOut: InsertCustomerAdapterOut
+        findAddressByZipCodeAdapterOut: FindAddressByZipCodeOutputPort,
+        insertCustomerAdapterOut: InsertCustomerOutputPort
     ) = InsertCustomerUserCase(
             findAddressByZipCodeAdapterOut,
             insertCustomerAdapterOut,
@@ -22,7 +22,7 @@ class CustomerBeansConfiguration {
 
     @Bean
     fun findCustomer(
-        findCustomerAdapterOut: FindCustomerAdapterOut
+        findCustomerAdapterOut: FindCustomerOutputPort
     ) = FindCustomerUseCase(
         findCustomerAdapterOut,
     )
