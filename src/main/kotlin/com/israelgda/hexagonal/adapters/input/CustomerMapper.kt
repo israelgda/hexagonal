@@ -17,7 +17,6 @@ fun CustomerEntity.toCustomer() = Customer(
     city = this.city,
     state = this.state,
     cpf = this.cpf,
-    isValidCpf = this.isValidCpf,
 )
 
 fun Customer.toCustomerResponse() = CustomerResponse(
@@ -27,5 +26,4 @@ fun Customer.toCustomerResponse() = CustomerResponse(
     city = this.city!!,
     state = this.state!!,
     cpf = this.cpf,
-    isValidCpf = this.isValidCpf,
 )

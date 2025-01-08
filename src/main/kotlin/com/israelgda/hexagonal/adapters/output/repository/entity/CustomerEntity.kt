@@ -28,8 +28,6 @@ data class CustomerEntity(
 
     @NotNull
     val cpf: String,
-
-    val isValidCpf: Boolean = false,
 ) {
 
     constructor(): this(
@@ -39,6 +37,5 @@ data class CustomerEntity(
         "",
         "",
         "",
-        false
     )
 }

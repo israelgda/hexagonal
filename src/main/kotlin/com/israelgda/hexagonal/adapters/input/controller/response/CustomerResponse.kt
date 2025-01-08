@@ -7,7 +7,6 @@ data class CustomerResponse(
     var city: String,
     var state: String,
     val cpf: String,
-    val isValidCpf: Boolean,
 ) {
     constructor(): this(
         null,
@@ -16,6 +15,5 @@ data class CustomerResponse(
         "",
         "",
         "",
-        false
     )
 }

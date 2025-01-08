@@ -12,5 +12,4 @@ fun Customer.toEntity() = CustomerEntity(
     this.city!!,
     this.state!!,
     this.cpf,
-    this.isValidCpf,
 )

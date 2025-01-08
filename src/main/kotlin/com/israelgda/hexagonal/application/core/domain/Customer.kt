@@ -1,13 +1,12 @@
 package com.israelgda.hexagonal.application.core.domain
 
 data class Customer(
-    val id: Long? = null,
-    val name: String,
+    var id: Long? = null,
+    var name: String,
     var street: String? = null,
     var city: String? = null,
     var state: String? = null,
-    val cpf: String,
-    val isValidCpf: Boolean = false,
+    var cpf: String,
 ){
     constructor(): this(
         null,
@@ -16,6 +15,5 @@ data class Customer(
         "",
         "",
         "",
-        false
     )
 }
