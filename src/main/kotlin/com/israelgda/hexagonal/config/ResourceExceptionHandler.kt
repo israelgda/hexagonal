@@ -1,5 +1,6 @@
 package com.israelgda.hexagonal.config
 
+import com.israelgda.hexagonal.application.core.exceptions.ClientErrorException
 import com.israelgda.hexagonal.application.core.exceptions.CpfAlreadyRegisteredException
 import com.israelgda.hexagonal.application.core.exceptions.NotFoundException
 import com.israelgda.hexagonal.application.core.exceptions.responses.StandardError
@@ -32,6 +33,19 @@ class ResourceExceptionHandler {
         val error = StandardError(
             status = status.value(),
             error = "Constraint violation",
+            message = exception.message!!
+        )
+
+        return ResponseEntity
+            .status(status)
+            .body(error)
+    }
+    @ExceptionHandler(ClientErrorException::class)
+    fun cfpAlreadyRegistered(exception: ClientErrorException): ResponseEntity<StandardError> {
+        val status = HttpStatus.INTERNAL_SERVER_ERROR
+        val error = StandardError(
+            status = status.value(),
+            error = "Client Response Error",
             message = exception.message!!
         )
 
