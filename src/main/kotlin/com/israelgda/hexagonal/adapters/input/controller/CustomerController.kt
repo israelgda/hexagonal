@@ -3,6 +3,7 @@ package com.israelgda.hexagonal.adapters.input.controller
 import com.israelgda.hexagonal.adapters.input.controller.request.CustomerRequest
 import com.israelgda.hexagonal.adapters.input.toCustomerInitialization
 import com.israelgda.hexagonal.adapters.input.toCustomerResponse
+import com.israelgda.hexagonal.application.ports.input.DeleteCustomerInputPort
 import com.israelgda.hexagonal.application.ports.input.FindCustomerInputPort
 import com.israelgda.hexagonal.application.ports.input.InsertCustomerInputPort
 import com.israelgda.hexagonal.application.ports.input.UpdateCustomerInputPort
@@ -16,6 +17,7 @@ class CustomerController(
     private val insertCustomerInputPort: InsertCustomerInputPort,
     private val findCustomerInputPort: FindCustomerInputPort,
     private val updateCustomerInputPort: UpdateCustomerInputPort,
+    private val deleteCustomerInputPort: DeleteCustomerInputPort,
 ) {
 
     @PostMapping
@@ -45,4 +47,9 @@ class CustomerController(
         customerRequested.toCustomerInitialization(),
         customerRequested.zipCode
     )
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    fun deleteById(@PathVariable id: Long) =
+        deleteCustomerInputPort.deleteById(id)
 }

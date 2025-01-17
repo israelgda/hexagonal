@@ -1,5 +1,7 @@
 package com.israelgda.hexagonal.config
 
+import com.israelgda.hexagonal.adapters.output.DeleteCustomerAdapterOut
+import com.israelgda.hexagonal.application.core.usecase.DeleteCustomerUseCase
 import com.israelgda.hexagonal.application.core.usecase.FindCustomerUseCase
 import com.israelgda.hexagonal.application.core.usecase.InsertCustomerUserCase
 import com.israelgda.hexagonal.application.core.usecase.UpdateCustomerUseCase
@@ -40,5 +42,13 @@ class CustomerBeansConfiguration {
         updateCustomerAdapterOut,
     )
 
+    @Bean
+    fun deleteCustomer(
+        findCustomerAdapterOut: FindCustomerOutputPort,
+        deleteCustomerAdapterOut: DeleteCustomerAdapterOut
+    ) = DeleteCustomerUseCase(
+        findCustomerAdapterOut,
+        deleteCustomerAdapterOut,
+    )
 
 }
